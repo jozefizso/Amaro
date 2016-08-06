@@ -510,7 +510,7 @@ class Bootstrapper
 
         task 'Merging' do
             # We're using 'ours' merge option so that our README.md wins
-            sh("git merge -q --squash -X ours 'remotes/bootstrap/#{@bootstrap_branch}'")
+            sh("git merge --allow-unrelated-histories -q --squash -X ours 'remotes/bootstrap/#{@bootstrap_branch}'")
             commit 'Bootstrapping', :add_all => false
         end
 
